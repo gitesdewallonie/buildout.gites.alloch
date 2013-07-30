@@ -13,8 +13,8 @@ fi
 case $1 in
   stop)
 
-    su gites -c \
-      "/home/gites/gites-alloch-website/bin/instance $*" \
+    su gdw -c \
+      "/home/gdw/gites-alloch-website/bin/instance $*" \
       </dev/null
 
     ;;
@@ -27,8 +27,8 @@ case $1 in
     ;;
   *)
 
-    su gites -c \
-      "/home/gites/gites-alloch-website/bin/instance $*" \
+    su gdw -c \
+      "/home/gdw/gites-alloch-website/bin/instance $*" \
        </dev/null
 
     ;;

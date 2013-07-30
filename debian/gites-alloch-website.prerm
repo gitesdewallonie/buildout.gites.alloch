@@ -7,9 +7,9 @@ PACKAGE="gites-alloch-website"
 
 case "$1" in
     remove|deconfigure)
-	find /home/gites/gites-alloch-website/eggs /home/gites/gites-alloch-website/devel -name "*.pyc" -delete;
-	find /home/gites/gites-alloch-website/eggs /home/gites/gites-alloch-website/devel -name "*.pyo" -delete;
-	find /home/gites/gites-alloch-website/eggs /home/gites/gites-alloch-website/devel -name "*.bin" -delete;
+	find /home/gdw/gites-alloch-website/eggs /home/gdw/gites-alloch-website/devel -name "*.pyc" -delete;
+	find /home/gdw/gites-alloch-website/eggs /home/gdw/gites-alloch-website/devel -name "*.pyo" -delete;
+	find /home/gdw/gites-alloch-website/eggs /home/gdw/gites-alloch-website/devel -name "*.bin" -delete;
     ;;
 
     upgrade|failed-upgrade)

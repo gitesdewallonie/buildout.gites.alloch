@@ -12,7 +12,7 @@ PACKAGE	  := gites-alloch-website
 CURDIR    := $(shell pwd)
 BUILDDIR  := $(CURDIR)/tmp/$(PACKAGE)
 DEBIANCORE    := $(CURDIR)/debian/$(PACKAGE)
-INSTALLDIR   := /home/gites/$(PACKAGE)
+INSTALLDIR   := /home/gdw/$(PACKAGE)
 
 distribution := $(shell lsb_release -is)
 
@@ -50,8 +50,8 @@ install-base:
 	rm -fr ${BUILDDIR}/downloads
 
 install-website:
-	mkdir -p $(DEBIANCORE)/home/gites/$(PACKAGE)
-	mkdir -p $(DEBIANCORE)/home/gites/$(PACKAGE)/parts
+	mkdir -p $(DEBIANCORE)/home/gdw/$(PACKAGE)
+	mkdir -p $(DEBIANCORE)/home/gdw/$(PACKAGE)/parts
 	find ${BUILDDIR}/bin -executable -type f -exec sed -i s%${BUILDDIR}%${INSTALLDIR}%g {} \;
 	sed -i s%${BUILDDIR}%${INSTALLDIR}%g ${BUILDDIR}/bin/instance
 	cp ${BUILDDIR}/bin/zopepy ${BUILDDIR}/parts/instance/bin/interpreter
@@ -68,7 +68,7 @@ install-website:
 	for i in $(find $(DEBIANCORE)/${INSTALLDIR}/parts/omelette -type l); do old_link=$(readlink -m $i); new_link=$(echo $old_link | sed  s%${BUILDDIR}/${INSTALLDIR}/); rm $i; ln -f -s $new_link $i; done
 	find $(DEBIANCORE)/${INSTALLDIR} -name "*.pyc" -delete;
 	find $(DEBIANCORE)/${INSTALLDIR} -name "*.pyo" -delete;
-	mkdir -p $(DEBIANCORE)/home/gites/$(PACKAGE)
+	mkdir -p $(DEBIANCORE)/home/gdw/$(PACKAGE)
 	mkdir -p $(DEBIANCORE)/${INSTALLDIR}/bin
 	mkdir -p $(DEBIANCORE)/${INSTALLDIR}/parts
 	mkdir -p $(DEBIANCORE)/${INSTALLDIR}/var/log

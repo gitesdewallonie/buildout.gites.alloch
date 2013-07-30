@@ -3,14 +3,14 @@
 set -e
 
 PACKAGE="gites-alloch-website"
-PACKAGE_HOME="/home/gites/$PACKAGE"
+PACKAGE_HOME="/home/gdw/$PACKAGE"
 
 export CLIENT_HOME="$PACKAGE_HOME/var/instance"
 
 case "$1" in
     configure)
 	# create var
-	/bin/chown -R gites:gites $PACKAGE_HOME
+	/bin/chown -R gdw:gdw $PACKAGE_HOME
 	/usr/bin/find $PACKAGE_HOME -name '*.pyc' -delete
 	/usr/bin/find $PACKAGE_HOME -name '*.pyo' -delete
 	/usr/bin/find $PACKAGE_HOME -name '*.mo' -delete
