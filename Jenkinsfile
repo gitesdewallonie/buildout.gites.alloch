@@ -1,6 +1,7 @@
 node()
 {
   stage 'checkout'
+  deleteDir()
   checkout scm
   sh "rm -f *.deb"
   stage 'build'
